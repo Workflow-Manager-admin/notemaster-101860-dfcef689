@@ -1,14 +1,45 @@
 /* CSS Variables for Theme Management */
 :root {
-  /* Light theme colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --text-primary: #282c34;
-  --text-secondary: #61dafb;
-  --border-color: #e9ecef;
-  --button-bg: #007bff;
-  --button-text: #ffffff;
+  /* Brand/Palette (light) */
+  --color-primary: #3f51b5;
+  --color-accent: #ffeb3b;
+  --color-secondary: #f50057;
+
+  /* General background/text colors */
+  --bg-primary: #fff;
+  --bg-secondary: #f6f7fa;
+  --text-primary: #2b2b38;
+  --text-secondary: #3f51b5;
+  --text-secondary-weak: #a0a3b5;
+  --border-color: #e5e8f0;
+
+  /* Buttons */
+  --button-bg: var(--color-primary);
+  --button-text: #fff;
+  --button-accent-bg: var(--color-accent);
+  --button-accent-text: #2b2b38;
+  --button-danger-bg: var(--color-secondary);
+  --button-danger-text: #fff;
+
+  /* Minimal elevation/shadow */
+  --shadow: 0 2px 10px 0 rgba(63,81,181,0.07), 0 0.5px 1px 0 rgba(63,81,181,0.03);
 }
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --bg-primary: #181825;
+  --bg-secondary: #23233a;
+  --text-primary: #f4f4fa;
+  --text-secondary: #ffeb3b;
+  --border-color: #34365b;
+  --button-bg: #222250;
+  --button-text: #fff;
+  --button-accent-bg: #383852;
+  --button-accent-text: #ffeb3b;
+  --button-danger-bg: #f50057;
+  --button-danger-text: #fff;
+}
+
 
 [data-theme="dark"] {
   /* Dark theme colors */

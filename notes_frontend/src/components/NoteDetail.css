@@ -9,59 +9,72 @@
   box-sizing: border-box;
 }
 .note-title-input {
-  font-size: 1.35em;
-  font-weight: 600;
+  font-size: 1.38em;
+  font-weight: 700;
   border: none;
-  border-bottom: 2px solid var(--border-color);
-  margin-bottom: 1.5em;
-  padding: 0.4em 0.1em;
+  border-bottom: 2.5px solid var(--border-color);
+  margin-bottom: 1.35em;
+  padding: 0.5em 0.1em 0.15em 0.1em;
   background: transparent;
   color: var(--text-primary);
   width: 100%;
   outline: none;
-  transition: border 0.17s;
+  transition: border-color 0.2s;
+  letter-spacing: 0.01em;
+  border-radius: 0;
 }
 .note-title-input:focus {
-  border-bottom: 2px solid var(--text-secondary);
+  border-bottom: 2.5px solid var(--color-primary);
 }
+
 .note-body-textarea {
   flex: 1 1 auto;
-  font-size: 1em;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1em;
-  min-height: 190px;
+  font-size: 1.05em;
+  border: 1.3px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.1em;
+  min-height: 185px;
   margin-bottom: 1em;
   background: var(--bg-secondary);
   color: var(--text-primary);
   width: 100%;
   resize: vertical;
   outline: none;
-  transition: border 0.17s;
+  transition: border-color 0.17s;
+  font-family: inherit;
+  line-height: 1.5;
 }
+
 .note-body-textarea:focus {
-  border: 1.5px solid var(--text-secondary);
+  border: 1.5px solid var(--color-primary);
+  background: #fcfdff;
 }
+
 .note-actions {
   display: flex;
-  gap: 1em;
-  margin-bottom: 0.8em;
+  gap: 0.8em;
+  margin-bottom: 0.65em;
 }
 .save-btn,
 .delete-btn {
-  min-width: 90px;
+  min-width: 92px;
   font-size: 1em;
-  padding: 0.6em 1.1em;
+  padding: 0.58em 1.18em;
   border: none;
   border-radius: 7px;
   outline: none;
   cursor: pointer;
-  transition: background 0.17s, color 0.17s;
-  font-weight: 500;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: background 0.18s, color 0.15s, transform 0.14s;
 }
 .save-btn {
-  background: var(--button-bg);
-  color: var(--button-text);
+  background: var(--color-primary);
+  color: #fff;
+}
+.save-btn:hover:not(:disabled), .save-btn:focus:not(:disabled) {
+  background: var(--color-accent);
+  color: #1c1c24;
 }
 .save-btn:disabled {
   background: var(--border-color);
@@ -69,8 +82,12 @@
   cursor: not-allowed;
 }
 .delete-btn {
-  background: #f50057;
+  background: var(--color-secondary);
   color: white;
+}
+.delete-btn:hover:not(:disabled),
+.delete-btn:focus:not(:disabled) {
+  background: #c20045;
 }
 .delete-btn:disabled {
   background: var(--border-color);
@@ -79,16 +96,31 @@
 }
 .note-timestamp {
   font-size: 0.93em;
-  color: var(--border-color);
-  margin-top: 10px;
-  margin-bottom: 10px;
+  color: var(--text-secondary-weak);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  text-align: right;
 }
 .note-detail-empty {
-  color: var(--border-color);
+  color: var(--text-secondary-weak);
   font-style: italic;
-  font-size: 1.1em;
-  padding: 4em 2em;
+  font-size: 1.11em;
+  padding: 4.2em 2em;
   text-align: center;
   background: var(--bg-primary);
   min-height: 100vh;
+}
+@media (max-width: 900px) {
+  .note-detail, .note-detail-empty {
+    min-height: 60vh;
+    padding: 22px 8vw;
+  }
+}
+@media (max-width: 600px) {
+  .note-detail, .note-detail-empty {
+    min-height: 45vh;
+    padding: 19px 3vw;
+  }
 }

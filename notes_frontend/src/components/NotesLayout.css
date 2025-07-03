@@ -1,7 +1,8 @@
 .notes-layout {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   background: var(--bg-primary);
+  box-sizing: border-box;
   overflow: hidden;
 }
 .notes-main {
@@ -11,21 +12,25 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  border-left: 1.5px solid var(--border-color);
 }
+
 @media (max-width: 900px) {
   .notes-layout {
     flex-direction: column;
+    min-height: unset;
   }
   .sidebar {
-    width: 100vw;
-    max-width: unset;
+    border-right: none;
+    border-bottom: 1.5px solid var(--border-color);
+    max-width: 100vw;
     height: auto;
     min-width: unset;
-    border-bottom: 1px solid var(--border-color);
-    border-right: none;
   }
   .notes-main {
     min-height: 40vh;
+    border-left: none;
     padding: 0 0.5em;
   }
 }
