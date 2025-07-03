@@ -1,0 +1,31 @@
+.notes-layout {
+  display: flex;
+  height: 100vh;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+.notes-main {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  background: var(--bg-primary);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 900px) {
+  .notes-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100vw;
+    max-width: unset;
+    height: auto;
+    min-width: unset;
+    border-bottom: 1px solid var(--border-color);
+    border-right: none;
+  }
+  .notes-main {
+    min-height: 40vh;
+    padding: 0 0.5em;
+  }
+}
